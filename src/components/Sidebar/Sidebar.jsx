@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { filterProductByCategory } from '../../redux/actions'
 
-const Sidebar = () => {
+const SideBar = () => {
+  const dispatch = useDispatch()
   return (
-    <div>
-      <Link to="/category/mobile">Mobile</Link>
-      <Link to="/category/tablets">Tablets</Link>
-      <Link to="/category/tv">TV</Link>
+    <div className='w-[150px] h-full p-4'>
+      <button className='block text-[16px] font-medium' onClick={() => dispatch(filterProductByCategory('mobile'))}>Mobile</button>
+      <button className='block text-[16px] font-medium my-7' onClick={() => dispatch(filterProductByCategory('tablet'))}>Tablet</button>
+      <button className='block text-[16px] font-medium' onClick={() => dispatch(filterProductByCategory('tv'))}>TV</button>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default SideBar
