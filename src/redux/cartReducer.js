@@ -10,11 +10,16 @@ const initialState = {
   const cartReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'ADD_TO_CART':
-        console.log('Adding to cart:', action.payload);
-        return {
-          ...state,
-          items: [...state.items, action.payload],
-        };
+        const item = state.items.find(item => item.id === action.payload.id);
+        if(item){
+          return state;
+        }else{
+
+          return {
+            ...state,
+            items: [...state.items, action.payload],
+          };
+        }
       case 'REMOVE_FROM_CART':
         return {
           ...state,
@@ -31,7 +36,7 @@ const initialState = {
           return {
             ...state,
             items: state.items.map(item => (
-              item.id === action.payload ? {...item, quantity: item.quantity - 1} : item
+              item.id === action.payload ? {...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity} : item
             ))
           }
         case 'FILTER_PRODUCT_BY_CATEGORY':

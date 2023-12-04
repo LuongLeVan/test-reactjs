@@ -10,7 +10,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';  
 import { addToCart } from '../../redux/actions';
-import Sidebar from '../Sidebar/Sidebar';
+import numberWithCommas from '../../math/numberWithCommas';
 
 
 const ProductCard = ({ product }) => {
@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
             </button>
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
-              {product.title} - {product.price}
+              {product.title} - {numberWithCommas(product.price)}đ
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {product.description.length > 100 ? `${product.description.slice(0, 80)}...` : product.description}

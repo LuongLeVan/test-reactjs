@@ -1,6 +1,3 @@
-import products from "../assets/fake-data/products";
-
-// actions.js
 export const addToCart = (product) => {
     product.quantity = 1;
     return {
@@ -19,7 +16,6 @@ export const addToCart = (product) => {
 
   export const increaseFromCart = (productId) => {
     return {
-
       type: 'INCREASE_FROM_CART',
       payload: productId,
     };

@@ -24,7 +24,7 @@ const Header = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Wavelabs
+          <Link to={'/'}>Wavelabs</Link>
         </Typography>
         <IconButton color="inherit" component={Link} to="/cart">
           <ShoppingCartIcon />

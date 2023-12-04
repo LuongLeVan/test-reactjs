@@ -10,7 +10,6 @@ const Home = () => {
 
   return (
     <div>
-        <Header />
         <div className='flex'>
           <SideBar/>
           <Grid container spacing={3} style={{marginTop:'40px'}}>
