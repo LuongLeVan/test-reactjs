@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar className='fixed top-0 left-0'>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <Link to={'/'}>Wavelabs</Link>
@@ -44,10 +44,10 @@ const Header = () => {
           onClose={handleClose}
         >
           <MenuItem component={Link} to="/profile" onClick={handleClose}>
-            My Profile
+            <Link to={'/profile'}>My Profile</Link>
           </MenuItem>
           <MenuItem component={Link} to="/settings" onClick={handleClose}>
-            My Settings
+            <Link to={'/setting'}>My Settings</Link>
           </MenuItem>
         </Menu>
       </Toolbar>

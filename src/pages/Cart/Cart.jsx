@@ -33,16 +33,17 @@ const Cart = () => {
   };
 
   return (
-    <div className='w-full'>
+    <div className='w-full mt-24'>
       {cartItems.length != 0
         ?
-        <div className='flex'>
+        <div className='md:flex'>
           <div className='w-full pr-20'>
             <TableContainer component={Paper}>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Product</TableCell>
+                    <TableCell align='left'>Product</TableCell>
+                    <TableCell align='center'>Name</TableCell>
                     <TableCell align="right">Price</TableCell>
                     <TableCell align="right">Quantity</TableCell>
                     <TableCell align="right">Total</TableCell>
@@ -58,10 +59,10 @@ const Cart = () => {
                           alt={item.title}
                           style={{ width: '100px', height: '100px', borderRadius: '5px' }}
                         />
-                        <Typography>{item.title}</Typography>
                       </TableCell>
+                      <TableCell align="right">{item.title}</TableCell>
                       <TableCell align="right">{numberWithCommas(item.price)}đ</TableCell>
-                      <TableCell align="right">
+                      <TableCell align="right" className='p-0'>
                         <div className='flex items-center justify-end'>
                           <IconButton>
                             <RemoveIcon onClick={() => dispatch(decreaseFromCart(item.id))} />
@@ -86,7 +87,7 @@ const Cart = () => {
             <div className='text-[24px]'>Total: {numberWithCommas(total)}đ</div>
           </div>
 
-          <div className='w-[600px]'>
+          <div className='w-[200px] md:w-[600px]'>
             <form className='p-4'>
               <input type="text" className='block border w-full text-black p-3' placeholder='Your Name' required onChange={(e) => setName(e.target.value)} />
               <input type="email" className='block border w-full text-black p-3 my-4' placeholder='Your Email' required onChange={(e) => setEmail(e.target.value)} />
