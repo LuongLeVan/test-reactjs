@@ -38,4 +38,11 @@ export const addToCart = (product) => {
       payload: category
     }
   }
+
+  export const enterNameForThankYou = (name) => {
+    return {
+      type: 'ENTER_NAME_FOR_THANK_YOU',
+      payload: name
+    }
+  }
   

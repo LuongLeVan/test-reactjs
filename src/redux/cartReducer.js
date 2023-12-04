@@ -3,6 +3,7 @@ import products from "../assets/fake-data/products";
 const initialState = {
     allItem: products,
     filterItem: products,
+    name: '',
     items: [],
   };
   
@@ -39,6 +40,11 @@ const initialState = {
             ...state,
             filterItem
           }
+        case 'ENTER_NAME_FOR_THANK_YOU':
+        return {
+          ...state,
+          name: action.payload
+        }
       default:
         return state;
     }
