@@ -48,7 +48,8 @@ const initialState = {
         case 'ENTER_NAME_FOR_THANK_YOU':
         return {
           ...state,
-          name: action.payload
+          name: action.payload,
+          items: []
         }
       default:
         return state;
